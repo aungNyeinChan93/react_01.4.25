@@ -2,6 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import Alert from './components/Alert'
 import CardList from './views/CardListView'
+import ProductList from './views/ProductView'
+
+
 function App() {
   const [count, setCount] = useState(1)
 
@@ -17,7 +20,8 @@ function App() {
         <Alert />
         <Alert />
       </div>
-      <CardList />
+      <CardList age={21} message='CardList' />
+      <ProductList />
     </>
   )
 }

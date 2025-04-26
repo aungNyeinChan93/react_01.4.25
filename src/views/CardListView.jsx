@@ -1,30 +1,36 @@
 import React from 'react';
 import Card from '../components/Card';
 
-const CardList = () => {
+const CardList = (props) => {
+    const addedProds = { ...props, some: 'susu' }
+    console.log(addedProds);
+    const { age, some, message } = addedProds;
     const titles = ['title-One', 'title-two', 'title-three'];
     return (
         <React.Fragment>
             <div className='w-full h-screen'>
                 <NavBar />
+                <h2 style={{ textAlign: 'center', fontSize: '1.6rem', color: 'green', background: 'gray', padding: '10px', margin: '10px', borderRadius: '10px' }}>{message}</h2>
                 <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 my-3'>
-                    <Card title='Men Clothings' />
+                    <Card title={some} age={age} />
                     {
                         titles.map(item => {
                             return <Card title={item} />
                         })
                     }
                 </div>
-                <Footer footer='this is footer' />
+                <Footer footer='this is footer' message={message} />
+
             </div>
         </React.Fragment>
     );
 };
 
-const Footer = ({ footer = '' }) => {
+const Footer = ({ footer = '', message }) => {
     return (
         <React.Fragment>
             <h3 className='px-4 py-2 bg-red-400 text-white w-full'>{footer}</h3>
+            <h4>{message}</h4>
         </React.Fragment>
     )
 }

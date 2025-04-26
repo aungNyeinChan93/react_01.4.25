@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ title = 'default', }) => {
+const Card = ({ title = 'default', age = null }) => {
     return (
         <React.Fragment>
             <div className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg mx-3">
@@ -9,9 +9,8 @@ const Card = ({ title = 'default', }) => {
                     src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                     className="h-56 w-full object-cover"
                 />
-
                 <div className="bg-white p-4 sm:p-6">
-                    <time datetime="2022-10-10" className="block text-xs text-gray-500"> 10th Oct 2022 </time>
+                    <time datetime="2022-10-10" className="block text-xs text-gray-500"> 10th Oct 2022 {age} </time>
 
                     <a href="#">
                         <h3 className="mt-0.5 text-lg text-gray-900">{title}</h3>
