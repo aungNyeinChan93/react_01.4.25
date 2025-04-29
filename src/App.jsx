@@ -7,11 +7,13 @@ import UserList from './views/UserListView'
 import Todo from './views/TodoView'
 import Test, { users } from './database/test'
 import Counter from './views/CounterView'
-
+import UseEffectTest from './views/useEffectTestView'
+import SwitchBtn from './components/SwitchBtn'
 function App() {
 
   return (
     <>
+      <SwitchBtn />
       {/* {Test.array}
       {users[0].name} */}
       <div className='grid grid-cols-3 gap-4'>
@@ -24,6 +26,7 @@ function App() {
       <UserList />
       <Todo />
       <Counter />
+      <UseEffectTest />
     </>
   )
 }

@@ -21,4 +21,9 @@ const fetchProducts = async () => {
     }
 }
 
-export { Todos, fetchUser, fetchProducts };
+const gitHubUsers = async () => {
+    const { data } = await axios.get('https://api.github.com/users');
+    return await data;
+}
+
+export { Todos, fetchUser, fetchProducts, gitHubUsers };
