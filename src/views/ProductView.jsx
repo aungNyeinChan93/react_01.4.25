@@ -1,18 +1,8 @@
 import React from 'react';
 import Product from '../components/Product';
-import axios from 'axios';
+import { fetchProducts } from '../database/db';
 
-const fetchProducts = async () => {
-    try {
-        const { data } = await axios.get('https://fakestoreapi.com/products');
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-}
 const products = await fetchProducts();
-
-
 const ProductList = () => {
     return (
         <React.Fragment>

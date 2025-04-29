@@ -1,13 +1,9 @@
 import React from 'react';
 import User from '../components/User';
-import axios from 'axios';
+import { fetchUser } from '../database/db'
 
-const fetchUser = async () => {
-    const { data } = await axios.get('https://fakestoreapi.com/users');
-    return data;
-};
+
 const users = await fetchUser();
-
 const UserList = () => {
     return (
         <React.Fragment>

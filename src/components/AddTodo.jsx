@@ -2,19 +2,25 @@ import React, { useRef } from 'react';
 
 const AddTodo = ({ addTodo }) => {
     const taskRef = useRef();
+
+    const submitTodo = (e) => {
+        console.log(e.target);
+        console.log(taskRef);
+
+        e.preventDefault();
+        const newTodo = {
+            id: Math.random().toFixed(1).toString(),
+            task: taskRef.current.value,
+            status: false
+        };
+        if (taskRef.current.value) addTodo(newTodo);
+        e.currentTarget.reset();
+    }
+
     return (
         <React.Fragment>
             <div className='px-4 py-2 overflow-hidden  rounded-lg shadow bg-gray-300 w-full container mx-auto mt-10'>
-                <form className='text-center' onSubmit={(e) => {
-                    e.preventDefault();
-                    const newTodo = {
-                        id: Math.random().toFixed(1).toString(),
-                        task: taskRef.current.value,
-                        status: false
-                    };
-                    addTodo(newTodo);
-                    e.currentTarget.reset();
-                }}>
+                <form className='text-center' onSubmit={submitTodo}>
                     <label htmlFor="Email" className='inline-block w-[600px] me-5'>
                         <span className="text-sm font-medium text-gray-700 ]"> Task </span>
                         <input

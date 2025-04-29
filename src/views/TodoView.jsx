@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import List from '../components/base/List';
 import Item from '../components/Item';
 import AddTodo from '../components/AddTodo';
+import { Todos } from '../database/db'
 
 const Todo = () => {
-    const [todos, setTodo] = useState([
-        { id: 1, task: 'task 1', status: false },
-        { id: 2, task: 'task 2', status: true },
-        { id: 3, task: 'task 3', status: true },
-        { id: 4, task: 'task 4', status: false },
-    ]);
+    const [todos, setTodo] = useState(Todos);
 
     const remove = (id) => {
         setTodo(todos.filter(todo => todo.id !== id))
@@ -26,7 +22,7 @@ const Todo = () => {
             <List>
                 {
                     todos.map(todo => {
-                        return <Item {...todo} remove={remove} />
+                        return <Item {...todo} remove={remove} key={todo.id} />
                     })
                 }
             </List>

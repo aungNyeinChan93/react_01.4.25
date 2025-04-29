@@ -5,18 +5,15 @@ import CardList from './views/CardListView'
 import ProductList from './views/ProductView'
 import UserList from './views/UserListView'
 import Todo from './views/TodoView'
-
+import Test, { users } from './database/test'
+import Counter from './views/CounterView'
 
 function App() {
-  const [count, setCount] = useState(1)
 
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count * 10)}>
-          count is {count}
-        </button>
-      </div>
+      {/* {Test.array}
+      {users[0].name} */}
       <div className='grid grid-cols-3 gap-4'>
         <Alert />
         <Alert />
@@ -26,6 +23,7 @@ function App() {
       <ProductList />
       <UserList />
       <Todo />
+      <Counter />
     </>
   )
 }
