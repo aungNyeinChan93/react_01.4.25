@@ -15,7 +15,7 @@ const CardList = (props) => {
                     <Card title={some} age={age} />
                     {
                         titles.map(item => {
-                            return <Card title={item} />
+                            return <Card title={item} key={item} />
                         })
                     }
                 </div>
@@ -38,7 +38,7 @@ const NavBar = () => {
     return (
         <React.Fragment>
             <div className='flex  px-4 py-4 bg-red-400 text-white my-4 rounded-lg '>
-                <brand className='text-xl mx-10'>Logo</brand>
+                <h3 className='text-xl mx-10'>Logo</h3>
                 <ul className='flex justify-start space-x-4 items-center'>
                     <li>Home</li>
                     <li>Home</li>

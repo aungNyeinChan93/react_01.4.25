@@ -25,11 +25,11 @@ const Product = ({ product }) => {
                         {title}
                     </h3>
 
-                    <p className="mt-1.5 tracking-wide text-gray-900">
+                    <div className="mt-1.5 tracking-wide text-gray-900">
                         <Pannel>
                             {price}
                         </Pannel>
-                    </p>
+                    </div>
                 </div>
             </a>
         </React.Fragment>

@@ -20,9 +20,10 @@ const ProductList = () => {
             <div className='grid grid-cols-4 gap-4 mx-10 ' >
                 {
                     products.map(product => {
-                        return <Product product={product} />
+                        return <Product product={product} key={product.id} />
                     })
                 }
+
             </div>
         </React.Fragment>
     );
