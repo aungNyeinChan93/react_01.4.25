@@ -9,8 +9,10 @@ import Test, { users } from './database/test'
 import Counter from './views/CounterView'
 import UseEffectTest from './views/useEffectTestView'
 import SwitchBtn from './components/SwitchBtn'
-function App() {
+import TestReducer from './views/TestReducer'
+import Categories from './views/CategoriesView'
 
+function App() {
   return (
     <>
       <SwitchBtn />
@@ -27,6 +29,8 @@ function App() {
       <Todo />
       <Counter />
       <UseEffectTest />
+      <TestReducer />
+      <Categories />
     </>
   )
 }

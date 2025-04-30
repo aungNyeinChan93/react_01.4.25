@@ -10,6 +10,9 @@ const UseEffectTest = () => {
 
     const [size, setSize] = useState(window.innerWidth);
 
+    const [isLoading, setLoading] = useState(true);
+    const [isError, setError] = useState('');
+
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -25,8 +28,22 @@ const UseEffectTest = () => {
     const [users, setUser] = useState([]);
 
     useEffect(() => {
-        setUser(GH_users)
+        try {
+            setUser(GH_users);
+            setLoading(false)
+        } catch (error) {
+            setError(error)
+        }
     }, []);
+
+
+    if (isLoading) {
+        return <h3 className='text-center text-red-600'>{isLoading && 'Loading...'}</h3>
+    }
+
+    if (isError) {
+        return <h3>{isError}</h3>
+    }
 
     return (
         <React.Fragment>
