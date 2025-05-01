@@ -11,6 +11,9 @@ import UseEffectTest from './views/useEffectTestView'
 import SwitchBtn from './components/SwitchBtn'
 import TestReducer from './views/TestReducer'
 import Categories from './views/CategoriesView'
+import TestUseRef from './views/TestUseRefView'
+import TestContext from './views/TestUseContext'
+import CustomerProvider from './contexts/CustomerProvider'
 
 function App() {
   return (
@@ -31,6 +34,10 @@ function App() {
       <UseEffectTest />
       <TestReducer />
       <Categories />
+      <TestUseRef />
+      <CustomerProvider>
+        <TestContext />
+      </CustomerProvider>
     </>
   )
 }
