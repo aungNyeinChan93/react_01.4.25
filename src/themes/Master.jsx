@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import App from '../App';
-export const AppContext = createContext();
+export const MasterContext = createContext();
 
 const Master = () => {
     let [data, setData] = useState({
@@ -10,11 +10,11 @@ const Master = () => {
         data.theme === 'dark' ? setData({ ...data, theme: 'light' }) : setData({ ...data, theme: 'dark' })
     }
     return (
-        <AppContext.Provider value={{ data, changeTheme }}>
+        <MasterContext.Provider value={{ data, changeTheme }}>
             <div className={data.theme === 'dark' ? "bg-gray-800" : 'bg-gray-100'}>
                 <App />
             </div>
-        </AppContext.Provider>
+        </MasterContext.Provider>
     );
 };
 

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../themes/Master';
+import { MasterContext } from '../themes/Master';
 
 
 const SwitchBtn = () => {
-    const { data, changeTheme } = useContext(AppContext);
+    const { data, changeTheme } = useContext(MasterContext);
 
 
     return (

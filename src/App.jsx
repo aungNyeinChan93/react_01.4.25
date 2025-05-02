@@ -14,30 +14,35 @@ import Categories from './views/CategoriesView'
 import TestUseRef from './views/TestUseRefView'
 import TestContext from './views/TestUseContext'
 import CustomerProvider from './contexts/CustomerProvider'
+import AppProvider from './contexts/AppProvider'
+import Welcome from './class_components/Welcome'
 
 function App() {
   return (
     <>
-      <SwitchBtn />
-      {/* {Test.array}
+      <AppProvider>
+        <Welcome test='this is test' />
+        <SwitchBtn />
+        {/* {Test.array}
       {users[0].name} */}
-      <div className='grid grid-cols-3 gap-4'>
-        <Alert />
-        <Alert />
-        <Alert />
-      </div>
-      <CardList age={21} message='CardList' />
-      <ProductList />
-      <UserList />
-      <Todo />
-      <Counter />
-      <UseEffectTest />
-      <TestReducer />
-      <Categories />
-      <TestUseRef />
-      <CustomerProvider>
-        <TestContext />
-      </CustomerProvider>
+        <div className='grid grid-cols-3 gap-4'>
+          <Alert />
+          <Alert />
+          <Alert />
+        </div>
+        <CardList age={21} message='CardList' />
+        <ProductList />
+        <UserList />
+        <Todo />
+        <Counter />
+        <UseEffectTest />
+        <TestReducer />
+        <Categories />
+        <TestUseRef />
+        <CustomerProvider>
+          <TestContext />
+        </CustomerProvider>
+      </AppProvider>
     </>
   )
 }
